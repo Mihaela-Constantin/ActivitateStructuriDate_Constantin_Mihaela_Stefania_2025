@@ -69,7 +69,15 @@ void modificaProducator(struct Telefon* te, char* producatorNou) {
 	}
 }
 
+void modificaSerie(struct Telefon* te, char serieNoua) {
 
+	if (te->serie == serieNoua) {
+		printf("\nValorile sunt identice %c.\n", te->serie);
+	}
+	else {
+		te->serie = serieNoua;
+	}
+}
 
 
 int main() {
@@ -84,10 +92,17 @@ int main() {
 	printf("\n=== Pret, inainte dupa modificare ===\n");
 	afisare(te);*/
 
-	printf("=== Producator, inainte de modificare ===\n");
+	//printf("=== Producator, inainte de modificare ===\n");
+	//afisare(te);
+	//modificaProducator(&te, "Nokia");
+	//printf("\n=== Producator, inainte dupa modificare ===\n");
+	//afisare(te);
+
+
+	printf("=== Serie, inainte de modificare ===\n");
 	afisare(te);
-	modificaProducator(&te, "Nokia");
-	printf("\n=== Producator, inainte dupa modificare ===\n");
+	modificaSerie(&te, 'C');
+	printf("\n=== Serie, inainte dupa modificare ===\n");
 	afisare(te);
 
 
