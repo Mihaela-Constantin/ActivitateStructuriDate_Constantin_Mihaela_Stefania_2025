@@ -53,7 +53,21 @@ void modificaPret(struct Telefon* te, float pretNou) {
 	}
 }
 
+void modificaProducator(struct Telefon* te, char* producatorNou) {
 
+	if (strcmp(te->producator, producatorNou) == 0) {
+		printf("\nValorile sunt identice.\n");
+	}
+	else {
+
+		if (te->producator != NULL) {
+			free(te->producator);
+		}
+
+		te->producator = (char*)malloc(strlen(producatorNou) + 1);
+		strcpy_s(te->producator, strlen(producatorNou) + 1, producatorNou);
+	}
+}
 
 
 
@@ -64,13 +78,17 @@ int main() {
 	te = initializare(1, "Samsung", 'A', 512, 1500);
 	//afisare(te);
 
-	printf("=== Pret, inainte de modificare ===\n");
+	/*printf("=== Pret, inainte de modificare ===\n");
 	afisare(te);
 	modificaPret(&te, 1000);
 	printf("\n=== Pret, inainte dupa modificare ===\n");
+	afisare(te);*/
+
+	printf("=== Producator, inainte de modificare ===\n");
 	afisare(te);
-
-
+	modificaProducator(&te, "Nokia");
+	printf("\n=== Producator, inainte dupa modificare ===\n");
+	afisare(te);
 
 
 	return 0;
