@@ -18,6 +18,24 @@
     <ClCompile Include="Test.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Telefon_explicat.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Persoana.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Masina.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Librarie.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Persoana_explicat.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Masina_explicat.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="Telefon.c">
       <Filter>Source Files</Filter>
     </ClCompile>

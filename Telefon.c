@@ -38,12 +38,24 @@ void afisare(struct Telefon te) {
 	printf("%d. Telefon %s | Seria %c | Ram %d Gb | Pret %5.2f RON\n", te.id, (te.producator != NULL) ? te.producator : "No Name", te.serie, te.ram, te.pret);
 }
 
+void dezalocare(struct Telefon* te) {
+	if (te->producator != NULL) {
+		free(te->producator);
+		te->producator = NULL;
+	}
+}
+
+
+
+
+
 
 
 int main() {
 	struct Telefon te;
 	te = initializare(1, "Samsung", 'A', 512, 1500);
 	afisare(te);
+	dezalocare(&te);
 
 
 	return 0;

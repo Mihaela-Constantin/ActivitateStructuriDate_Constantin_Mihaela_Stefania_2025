@@ -127,7 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Librarie.c" />
+    <ClCompile Include="Masina.c" />
+    <ClCompile Include="Masina_explicat.c" />
+    <ClCompile Include="Persoana.c" />
+    <ClCompile Include="Persoana_explicat.c" />
     <ClCompile Include="Telefon.c" />
+    <ClCompile Include="Telefon_explicat.c" />
     <ClCompile Include="Test.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
