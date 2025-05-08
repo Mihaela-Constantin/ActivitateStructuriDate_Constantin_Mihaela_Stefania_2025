@@ -80,6 +80,22 @@ void modificaSerie(struct Telefon* te, char serieNoua) {
 	}
 }
 
+void modificaRam(struct Telefon* te, int ramNou) {
+
+	if (te->ram == ramNou) {
+		printf("\nValorile sunt identice %d.\n", te->ram);
+	}
+	else {
+		te->ram = ramNou;
+	}
+}
+
+
+
+
+
+
+
 
 int main() {
 	
@@ -98,13 +114,17 @@ int main() {
 	//printf("\n=== Producator, inainte dupa modificare ===\n");
 	//afisare(te);
 
+	//printf("=== Serie, inainte de modificare ===\n");
+	//afisare(te);
+	//modificaSerie(&te, 'C');
+	//printf("\n=== Serie, inainte dupa modificare ===\n");
+	//afisare(te);
 
-	printf("=== Serie, inainte de modificare ===\n");
+	printf("=== RAM, inainte de modificare ===\n");
 	afisare(te);
-	modificaSerie(&te, 'C');
-	printf("\n=== Serie, inainte dupa modificare ===\n");
+	modificaRam(&te, 128);
+	printf("\n=== RAM, inainte dupa modificare ===\n");
 	afisare(te);
-
 	
 
 	dezalocare(&te);
