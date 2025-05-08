@@ -45,15 +45,28 @@ void dezalocare(struct Telefon* te) {
 	}
 }
 
+void modificaPret(struct Telefon* te, float pretNou) {
 
+	if (pretNou > 0) {
+		te->pret = pretNou;
+	} else {
+		printf("\nPretul intodus este mai mic sau egal cu 0.\n");
+	}
+}
 
 
 
 
 
 int main() {
+	
 	struct Telefon te;
 	te = initializare(1, "Samsung", 'A', 512, 1500);
+
+	printf("=== Pret, inainte de modificare ===\n");
+	afisare(te);
+	modificaPret(&te, 1000);
+	printf("\n=== Pret, inainte dupa modificare ===\n");
 	afisare(te);
 	dezalocare(&te);
 
