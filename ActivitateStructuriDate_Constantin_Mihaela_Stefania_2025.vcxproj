@@ -132,7 +132,7 @@
     <ClCompile Include="Masina_explicat.c" />
     <ClCompile Include="Persoana.c" />
     <ClCompile Include="Persoana_explicat.c" />
-    <ClCompile Include="Telefon.c" />
+    <ClCompile Include="TelefonNou.c" />
     <ClCompile Include="Telefon_explicat.c" />
     <ClCompile Include="Test.c" />
   </ItemGroup>

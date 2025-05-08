@@ -36,7 +36,7 @@
     <ClCompile Include="Masina_explicat.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Telefon.c">
+    <ClCompile Include="TelefonNou.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
