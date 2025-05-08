@@ -9,45 +9,42 @@ struct Telefon {
 	char serie;
 };
 
-struct Telefon initializare(int id, int ram, const char* producator, float pret, char serie) {
-	struct Telefon t;
-	t.id = 1;
-	t.ram = ram;
-	t.producator = (char*)malloc(sizeof(char) * (strlen(producator) +1)); 
-	strcpy_s(t.producator, strlen(producator) + 1, producator);
-	t.pret = pret;
-	t.serie = serie;
-	return t;
+// === STRUCTURI si FUNCTII => TO DO:
+// 1 - functie initializare atribute structura
+// 2 - functie listare atribute structura
+// 3 - functie dezalocare atribute de tip pointer din structura
+// 4 - functie modificare pret
+// 5 - functie modificare producator telefon
+// 6 - functie modificare serie telefon
+// 7 - functie modificare RAM telefon
+// 8 - adaugare atribut stoc in structura si in functia de afisare
+// 9 - functie de modificare stoc
+
+struct Telefon initializare(int id, const char* producator, char serie, int ram, float pret) {
+
+	struct Telefon te;
+	te.id = id;
+	te.ram = ram;
+	te.producator = (char*)malloc(sizeof(char) * (strlen(producator) + 1));
+	strcpy_s(te.producator, strlen(producator) + 1, producator);
+	te.pret = pret;
+	te.serie = serie;
+
+	return te;
 }
 
-//afisarea tuturor atributelor.
-void afisare(struct Telefon t) {
-	// varianta comasata
-	printf("%d. Telefonul %s seria %c are %d Gb RAM, costa %5.2f RON\n", t.id, (t.producator != NULL) ? t.producator : "No Name", t.serie, t.ram, t.pret);
+
+void afisare(struct Telefon te) {
+	printf("%d. Telefon %s | Seria %c | Ram %d Gb | Pret %5.2f RON\n", te.id, (te.producator != NULL) ? te.producator : "No Name", te.serie, te.ram, te.pret);
 }
 
-//modificare atribut pret, este un fel de setter
-void modificaPret(struct Telefon* t, float pretNou) {
-	if (pretNou > 0) {
-		t->pret = pretNou;
-	}
-}
 
-//dezalocare campuri alocate dinamic
-void dezalocare(struct Telefon* t) {
-	if (t->producator != NULL) {
-		free(t->producator);
-		t->producator = NULL;
-	}
-}
 
 int main() {
-	struct Telefon t;
-	t = initializare(1, 256, "Samsung", 2000.5, 'A');
-	afisare(t);
-	modificaPret(&t, 1500);
-	afisare(t);
-	dezalocare(&t);
-	afisare(t);
+	struct Telefon te;
+	te = initializare(1, "Samsung", 'A', 512, 1500);
+	afisare(te);
+
+
 	return 0;
 }
