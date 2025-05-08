@@ -7,6 +7,9 @@ struct Telefon {
 	char* producator;
 	float pret;
 	char serie;
+
+	// atribute noi
+	int stoc;
 };
 
 // === STRUCTURI si FUNCTII => TO DO:
@@ -20,7 +23,7 @@ struct Telefon {
 // 8 - adaugare atribut stoc in structura si in functia de afisare
 // 9 - functie de modificare stoc
 
-struct Telefon initializare(int id, const char* producator, char serie, int ram, float pret) {
+struct Telefon initializare(int id, const char* producator, char serie, int ram, float pret, int stoc) {
 
 	struct Telefon te;
 	te.id = id;
@@ -29,13 +32,14 @@ struct Telefon initializare(int id, const char* producator, char serie, int ram,
 	strcpy_s(te.producator, strlen(producator) + 1, producator);
 	te.pret = pret;
 	te.serie = serie;
+	te.stoc = stoc;
 
 	return te;
 }
 
 
 void afisare(struct Telefon te) {
-	printf("%d. Telefon %s | Seria %c | Ram %d Gb | Pret %5.2f RON\n", te.id, (te.producator != NULL) ? te.producator : "No Name", te.serie, te.ram, te.pret);
+	printf("%d. Telefon %s | Seria %c | Ram %d Gb | Pret %5.2f RON | Stoc %d\n", te.id, (te.producator != NULL) ? te.producator : "No Name", te.serie, te.ram, te.pret, te.stoc);
 }
 
 void dezalocare(struct Telefon* te) {
@@ -90,7 +94,11 @@ void modificaRam(struct Telefon* te, int ramNou) {
 	}
 }
 
-
+void modificaStoc(struct Telefon* te, int stocNou) {
+	if (stocNou >= 0) {
+		te->stoc = stocNou;
+	}
+}
 
 
 
@@ -100,7 +108,7 @@ void modificaRam(struct Telefon* te, int ramNou) {
 int main() {
 	
 	struct Telefon te;
-	te = initializare(1, "Samsung", 'A', 512, 1500);
+	te = initializare(1, "Samsung", 'A', 512, 1500, 10);
 
 	//printf("=== Pret, inainte de modificare ===\n");
 	//afisare(te);
@@ -120,12 +128,17 @@ int main() {
 	//printf("\n=== Serie, inainte dupa modificare ===\n");
 	//afisare(te);
 
-	printf("=== RAM, inainte de modificare ===\n");
-	afisare(te);
-	modificaRam(&te, 128);
-	printf("\n=== RAM, inainte dupa modificare ===\n");
-	afisare(te);
+	//printf("=== RAM, inainte de modificare ===\n");
+	//afisare(te);
+	//modificaRam(&te, 128);
+	//printf("\n=== RAM, inainte dupa modificare ===\n");
+	//afisare(te);
 	
+	printf("=== Stoc, inainte de modificare ===\n");
+	afisare(te);
+	modificaStoc(&te, 5);
+	printf("\n=== Stoc, inainte dupa modificare ===\n");
+	afisare(te);
 
 	dezalocare(&te);
 
